@@ -13,11 +13,11 @@ export class AppComponent implements OnInit, OnDestroy{
   storeUnsubscribe: () => void;
 
   constructor(@Inject(AppStore) private store: Store<AppState>) {
-    this.storeUnsubscribe = this.store.subscribe(() => this.readState());
-    this.readState();
   }
 
   ngOnInit(): void {
+    this.storeUnsubscribe = this.store.subscribe(() => this.readState());
+    this.readState();
   }
 
   ngOnDestroy(): void {
